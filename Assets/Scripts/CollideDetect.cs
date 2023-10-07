@@ -37,6 +37,9 @@ public class CollideDetect : MonoBehaviour
         }
         else if (other.gameObject.tag == "Bear")
         {
+            rb.velocity = new Vector3(0, 0, 0);
+            rb.angularVelocity = new Vector3(0, 0, 0);
+
             Destroy(other.gameObject);
             BearCounter = BearCounter + 1;
             Debug.Log("Bear Counter: " + BearCounter);
