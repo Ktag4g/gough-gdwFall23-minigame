@@ -8,6 +8,7 @@ public class CollideDetect : MonoBehaviour
     private bool collisionOccured = false;
 
     public Rigidbody rb;
+    public SpawnManager spawnManager;
 
     GameObject Player;
     void Start()
@@ -58,6 +59,9 @@ public class CollideDetect : MonoBehaviour
                 Destroy(other.gameObject);
                 BearCounter = BearCounter + 1;
                 Debug.Log("Bear Counter: " + BearCounter);
+
+                //Spawns crew bear
+                spawnManager.SpawnCrewBear();
 
                 //Confirms collision
                 collisionOccured = true;
