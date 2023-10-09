@@ -43,7 +43,9 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnCrewBear()
     {
+        Vector3 spawnPos = new Vector3(-0.2f, -0.65f, (ScoreManager.BearCounter + 1) * -2f);
+
         //Spawns bear
-        Instantiate(crew[0]);
+        Instantiate(crew[0], spawnPos, crew[0].transform.rotation);
     }
 }

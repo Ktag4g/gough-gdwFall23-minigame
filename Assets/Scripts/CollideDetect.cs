@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CollideDetect : MonoBehaviour
 {
-    private int BearCounter = 0;
     private bool collisionOccured = false;
 
     public Rigidbody rb;
@@ -28,11 +27,11 @@ public class CollideDetect : MonoBehaviour
         {
             if (other.gameObject.tag == "Obstacle")
             {
-                if (BearCounter > 0)
+                if (ScoreManager.BearCounter > 0)
                 {
                     //Knocks off a bear when hit by an asteroid
-                    BearCounter = BearCounter - 1;
-                    Debug.Log("Bear Counter: " + BearCounter);
+                    ScoreManager.BearCounter = ScoreManager.BearCounter - 1;
+                    Debug.Log("Bear Counter: " + ScoreManager.BearCounter);
 
                     //Confirms collision
                     collisionOccured = true;
@@ -57,8 +56,8 @@ public class CollideDetect : MonoBehaviour
 
                 //Collects bear, updates score
                 Destroy(other.gameObject);
-                BearCounter = BearCounter + 1;
-                Debug.Log("Bear Counter: " + BearCounter);
+                ScoreManager.BearCounter = ScoreManager.BearCounter + 1;
+                Debug.Log("Bear Counter: " + ScoreManager.BearCounter);
 
                 //Spawns crew bear
                 spawnManager.SpawnCrewBear();

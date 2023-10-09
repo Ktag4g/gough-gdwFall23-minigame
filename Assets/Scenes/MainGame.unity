@@ -548,15 +548,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2986850745822334711, guid: 7e6388a4d7fc9e343a9b723155c579e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.48
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2986850745822334711, guid: 7e6388a4d7fc9e343a9b723155c579e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2800002
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 2986850745822334711, guid: 7e6388a4d7fc9e343a9b723155c579e0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2986850745822334711, guid: 7e6388a4d7fc9e343a9b723155c579e0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -657,6 +657,8 @@ MonoBehaviour:
   obstacle: {fileID: 8610055168858682860, guid: 8f9fbc4912957614ea73527579473786, type: 3}
   bears:
   - {fileID: 2986850745822334710, guid: f53e2c6e0f56ece4ebdf7a46fe755956, type: 3}
+  crew:
+  - {fileID: 4501015489122093446, guid: 8d611143380b3ca44939c648ad453372, type: 3}
 --- !u!4 &608753896
 Transform:
   m_ObjectHideFlags: 0
@@ -664,7 +666,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608753894}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -708,6 +710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 692021383}
+  spawnManager: {fileID: 608753895}
 --- !u!54 &692021383 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: -8312631206146823364, guid: 7e6388a4d7fc9e343a9b723155c579e0, type: 3}
