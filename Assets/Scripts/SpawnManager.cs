@@ -13,7 +13,8 @@ public class SpawnManager : MonoBehaviour
 
     public GameObject obstacle;
     public GameObject[] bears;
-    public GameObject[] crew;
+    public GameObject[] crewPrefabs;
+    public List<GameObject> crew = new List<GameObject>();
 
     void Start()
     {
@@ -46,6 +47,6 @@ public class SpawnManager : MonoBehaviour
         Vector3 spawnPos = new Vector3(-0.2f, -0.65f, (ScoreManager.BearCounter + 1) * -2f);
 
         //Spawns bear
-        Instantiate(crew[0], spawnPos, crew[0].transform.rotation);
+        crew.Add(Instantiate(crewPrefabs[0], spawnPos, crewPrefabs[0].transform.rotation));
     }
 }

@@ -8,6 +8,7 @@ public class CollideDetect : MonoBehaviour
 
     public Rigidbody rb;
     public SpawnManager spawnManager;
+    public SetPlayer SetPlayer;
 
     GameObject Player;
     void Start()
@@ -33,6 +34,8 @@ public class CollideDetect : MonoBehaviour
                     ScoreManager.BearCounter = ScoreManager.BearCounter - 1;
                     Debug.Log("Bear Counter: " + ScoreManager.BearCounter);
 
+                    SetPlayer.destroyPlayer(gameObject);
+
                     //Confirms collision
                     collisionOccured = true;
                 }
@@ -42,8 +45,8 @@ public class CollideDetect : MonoBehaviour
                     Debug.Log("Game Over!");
 
                     //Launches bear
-                    rb.velocity = new Vector3(3, 3, 0);
-                    
+                    SetPlayer.destroyPlayer(gameObject);
+
                     //Confirms collision
                     collisionOccured = true;
                 }

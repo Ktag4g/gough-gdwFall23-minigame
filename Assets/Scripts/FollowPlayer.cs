@@ -11,7 +11,6 @@ public class FollowPlayer : MonoBehaviour
     void Start()
     {
         Rotator = GameObject.Find("Rotator");
-
     }
 
     // Update is called once per frame
