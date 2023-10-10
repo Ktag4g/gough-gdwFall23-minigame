@@ -24,11 +24,11 @@ public class CollideDetect : MonoBehaviour
         {
             if (other.gameObject.tag == "Obstacle")
             {
-                if (ScoreManager.BearCounter > 0)
+                if (SpawnManager.crew.Count > 0)
                 {
                     //Knocks off a bear when hit by an asteroid
                     ScoreManager.BearCounter = ScoreManager.BearCounter - 1;
-                    Debug.Log("Bear Counter: " + ScoreManager.BearCounter);
+                    Debug.Log("Bear Counter: " + (ScoreManager.BearCounter - 1));
 
                      //Destroys old player
                     SetPlayer.destroyPlayer(gameObject);
@@ -67,7 +67,7 @@ public class CollideDetect : MonoBehaviour
                 //Collects bear, updates score
                 Destroy(other.gameObject);
                 ScoreManager.BearCounter = ScoreManager.BearCounter + 1;
-                Debug.Log("Bear Counter: " + ScoreManager.BearCounter);
+                Debug.Log("Bear Counter: " + (ScoreManager.BearCounter - 1));
 
                 //Spawns crew bear
                 spawnManager.SpawnCrewBear();
