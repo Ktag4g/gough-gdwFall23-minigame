@@ -11,9 +11,13 @@ public class SpawnManager : MonoBehaviour
     public float bearSpawnDelay = 5;
     public float bearSpawnInterval = 2f;
 
+    public float BackgroundSpawnDelay = 0;
+    public float BackgroundSpawnInterval = 15f;
+
     public GameObject obstacle;
     public GameObject[] bears;
     public GameObject[] crewPrefabs;
+    public GameObject background;
     public static List<GameObject> crew = new List<GameObject>();
 
     void Start()
@@ -21,6 +25,8 @@ public class SpawnManager : MonoBehaviour
         //Calls function at timed intervals
         InvokeRepeating("SpawnObstacle", obsSpawnDelay, obsSpawnInterval);
         InvokeRepeating("SpawnBear", bearSpawnDelay, bearSpawnInterval);
+
+        InvokeRepeating("SpawnBackground", BackgroundSpawnDelay, BackgroundSpawnInterval);
     }
 
     void SpawnObstacle()
@@ -48,5 +54,12 @@ public class SpawnManager : MonoBehaviour
 
         //Spawns bear
         crew.Add(Instantiate(crewPrefabs[0], spawnPos, crewPrefabs[0].transform.rotation));
+    }
+
+    void SpawnBackground()
+    {
+        Vector3 spawnPos = new Vector3(0, 0, 281.9f);
+
+        Instantiate(background, spawnPos, background.transform.rotation);
     }
 }
