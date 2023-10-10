@@ -13,20 +13,34 @@ public class SetPlayer : MonoBehaviour
 
         //Change tag to player
         replacer.tag = "Player";
+        
+        //Enables Collider
+        replacer.GetComponent<CapsuleCollider>().enabled = true;
+
+        //Adds ridibody to player
+        replacer.AddComponent<Rigidbody>();
+        replacer.GetComponent<Rigidbody>().useGravity = false;
 
         //Add player to jump script
         replacer.AddComponent<PlayerJump>();
+
+        //Add collide detect script to player
+        replacer.AddComponent<CollideDetect>();
     }
 
     public static void destroyPlayer(GameObject player)
     {
-        Rigidbody rb = player.GetComponent<Rigidbody>();
-        //Component jumpControls = player.GetComponent<PlayerJump>();
-
         //Launches player
+        Rigidbody rb = player.GetComponent<Rigidbody>();
         rb.velocity = new Vector3(5, 5, 0);
+        
+        //Removes playerjump script
+        Destroy(player.GetComponent<PlayerJump>());
 
-        //Turns off playerJump script
+        //Removes player collider
+        Destroy(player.GetComponent<CapsuleCollider>());
+
+        //Destroys player after being launched
         Destroy(player, 2.0f);
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
 {
-    public float speed = 40.0f;
+    public float speed = 10.0f;
 
     // Update is called once per frame
     void Update()
@@ -15,7 +15,6 @@ public class PlayerJump : MonoBehaviour
         }
         else
         {
-            //figure this out
             if (transform.localPosition.y > 2.5)
             {
                 transform.Translate(Vector3.down * Time.deltaTime * speed);

@@ -10,12 +10,8 @@ public class CollideDetect : MonoBehaviour
     public SpawnManager spawnManager;
     public SetPlayer SetPlayer;
 
-    GameObject Player;
     void Start()
     {
-        //Finding Player gameobject by name
-        Player = GameObject.Find("Player");
-
         //Resets bear physics
         rb = GetComponent<Rigidbody>();
         rb.inertiaTensor = new Vector3(1, 1, 1);
@@ -39,6 +35,12 @@ public class CollideDetect : MonoBehaviour
 
                     //Moves all bears forward in line
                     SetPlayer.moveLine(SpawnManager.crew);
+
+                    //Sets next player as bear
+                    SetPlayer.setPlayer(SpawnManager.crew[0]);
+
+                    //Removes new player from crew list
+                    SpawnManager.crew.RemoveAt(0);
 
                     //Confirms collision
                     collisionOccured = true;
