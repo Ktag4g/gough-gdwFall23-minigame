@@ -29,4 +29,22 @@ public class SetPlayer : MonoBehaviour
         //Turns off playerJump script
         Destroy(player, 2.0f);
     }
+
+    public static void moveLine(List<GameObject> crew)
+    {
+        foreach (GameObject crewM in crew)
+        {
+            Vector3 goal = crewM.transform.position + new Vector3(0, 0, 2);
+
+            while (true)
+            {
+                Vector3 start = crewM.transform.position;
+                if (start == goal)
+                {
+                    break;
+                }
+                crewM.transform.position = Vector3.MoveTowards(start, goal, Time.deltaTime * 2);
+            }
+        }
+    }
 }

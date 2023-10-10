@@ -35,21 +35,10 @@ public class CollideDetect : MonoBehaviour
                     Debug.Log("Bear Counter: " + ScoreManager.BearCounter);
 
                      //Destroys old player
-                    SetPlayer.destroyPlayer(gameObject);                   
-                    
-                    //Moves all bears forward in line
-                    foreach (GameObject crewM in SpawnManager.crew)
-                    {
-                        while (true)
-                        {
-                            Vector3 start = crewM.transform.position;
-                            Vector3 goal = crewM.transform.position + new Vector3(0, 0, 2);
+                    SetPlayer.destroyPlayer(gameObject);
 
-                            if (start == goal)
-                                break;
-                            crewM.transform.position = Vector3.MoveTowards(start, goal, Time.deltaTime * 20);
-                        }
-                    }
+                    //Moves all bears forward in line
+                    SetPlayer.moveLine(SpawnManager.crew);
 
                     //Confirms collision
                     collisionOccured = true;
