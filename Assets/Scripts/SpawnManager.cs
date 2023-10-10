@@ -14,7 +14,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject obstacle;
     public GameObject[] bears;
     public GameObject[] crewPrefabs;
-    public List<GameObject> crew = new List<GameObject>();
+    public static List<GameObject> crew = new List<GameObject>();
 
     void Start()
     {

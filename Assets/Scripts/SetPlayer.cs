@@ -8,10 +8,6 @@ public class SetPlayer : MonoBehaviour
     {
         GameObject Rotator = GameObject.Find("Rotator");
 
-        //Moves to player's spot
-        Vector3 offset = new Vector3(0, 0, 2);
-        replacer.transform.Translate(replacer.transform.position + offset);
-
         //Set as a child of rotator
         replacer.transform.SetParent(Rotator.transform, true);
 
