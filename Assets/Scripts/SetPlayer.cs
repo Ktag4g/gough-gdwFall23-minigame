@@ -40,6 +40,9 @@ public class SetPlayer : MonoBehaviour
         //Removes player collider
         Destroy(player.GetComponent<CapsuleCollider>());
 
+        //Unparents from rotator
+        player.transform.parent = null;
+
         //Destroys player after being launched
         Destroy(player, 2.0f);
     }
