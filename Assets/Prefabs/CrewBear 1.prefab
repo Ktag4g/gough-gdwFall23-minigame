@@ -1286,7 +1286,7 @@ GameObject:
   - component: {fileID: 5260518467535354445}
   m_Layer: 0
   m_Name: CrewBear 1
-  m_TagString: Bear
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

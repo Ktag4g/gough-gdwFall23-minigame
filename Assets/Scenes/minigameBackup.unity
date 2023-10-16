@@ -454,12 +454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 210a8604e594fb5478516aa685ed841d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obsSpawnDelay: 1
-  obsSpawnInterval: 0.3
-  bearSpawnDelay: 5
-  bearSpawnInterval: 1
-  BackgroundSpawnDelay: 0
-  BackgroundSpawnInterval: 9.9
   obstacle: {fileID: 8610055168858682860, guid: 8f9fbc4912957614ea73527579473786, type: 3}
   bears:
   - {fileID: 2986850745822334710, guid: f53e2c6e0f56ece4ebdf7a46fe755956, type: 3}
@@ -517,8 +511,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 692021383}
+  sp: {fileID: 0}
   spawnManager: {fileID: 608753895}
-  SetPlayer: {fileID: 0}
 --- !u!54 &692021383 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: -8312631206146823364, guid: 7e6388a4d7fc9e343a9b723155c579e0, type: 3}
@@ -873,7 +867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8113045530030131, guid: a34cce738f278cc45b16a3725b2e697d, type: 3}
       propertyPath: m_Name
-      value: Background (1)
+      value: Background
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a34cce738f278cc45b16a3725b2e697d, type: 3}

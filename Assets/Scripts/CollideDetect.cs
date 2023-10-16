@@ -7,14 +7,19 @@ public class CollideDetect : MonoBehaviour
     private bool collisionOccured = false;
 
     public Rigidbody rb;
+    public GameObject sp;
     public SpawnManager spawnManager;
-    public SetPlayer SetPlayer;
+    private SetPlayer SetPlayer;
 
     void Start()
     {
         //Resets bear physics
         rb = GetComponent<Rigidbody>();
         rb.inertiaTensor = new Vector3(1, 1, 1);
+
+        //Sets Spawn manager
+        sp = GameObject.Find("Spawn Manager");
+        spawnManager = sp.GetComponent<SpawnManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,7 +33,7 @@ public class CollideDetect : MonoBehaviour
                 {
                     //Knocks off a bear when hit by an asteroid
                     ScoreManager.BearCounter = ScoreManager.BearCounter - 1;
-                    Debug.Log("Bear Counter: " + (ScoreManager.BearCounter - 1));
+                    Debug.Log("Crewmate Counter: " + (ScoreManager.BearCounter - 1));
 
                      //Destroys old player
                     SetPlayer.destroyPlayer(gameObject);
@@ -67,7 +72,7 @@ public class CollideDetect : MonoBehaviour
                 //Collects bear, updates score
                 Destroy(other.gameObject);
                 ScoreManager.BearCounter = ScoreManager.BearCounter + 1;
-                Debug.Log("Bear Counter: " + (ScoreManager.BearCounter - 1));
+                Debug.Log("Crewmate Counter: " + (ScoreManager.BearCounter - 1));
 
                 //Spawns crew bear
                 spawnManager.SpawnCrewBear();

@@ -5,14 +5,14 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     //Spawn variables
-    public float obsSpawnDelay = 1;
-    public float obsSpawnInterval = 0.3f;
+    private float obsSpawnDelay = 1;
+    private float obsSpawnInterval = 0.3f;
 
-    public float bearSpawnDelay = 5;
-    public float bearSpawnInterval = 2f;
+    private float bearSpawnDelay = 5;
+    private float bearSpawnInterval = 2f;
 
-    public float BackgroundSpawnDelay = 0;
-    public float BackgroundSpawnInterval = 15f;
+    private float BackgroundSpawnDelay = 0;
+    private float BackgroundSpawnInterval = 9.9f;
 
     public GameObject obstacle;
     public GameObject[] bears;
